@@ -44,8 +44,9 @@
                         <input type="text" id="inputtext" />
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">
+                 <router-link :to="'/cart'">    <a class="nav-link" href="#">
                         <i class="fa-solid fa-cart-shopping mt-2 ms-4" style="font-size:25px"></i></a>
+                         </router-link>
                     </li>
 
                     <li class="nav-item">

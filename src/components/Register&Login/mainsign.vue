@@ -9,8 +9,9 @@
                 <a
                   data-toggle="pill"
                   href="#pills-login"
-                  :class="{ selected: signIn }"
-                  @click.prevent="signIn = true; signUp = false"
+                  
+                  :class="[signIn?'selected':'']"
+                @click.prevent="signIn=true;signUp=false"
                 >
                   <span class="sign">sign in</span>
                 </a>
@@ -19,8 +20,8 @@
                 <a
                   data-toggle="pill"
                   href="#pills-signUp"
-                  :class="{ selected: signUp }"
-                  @click.prevent="signIn = false; signUp = true"
+                   :class="[signUp?'selected':'']"
+                  @click.prevent="signIn=false;signUp=true"
                 >
                   <span class="sign">sign up</span>
                 </a>
@@ -29,7 +30,7 @@
   
             <div class="tab-content">
               <!-- Sign in -->
-              <div class="tab-pane fade show active" id="pills-login">
+              <div class="tab-pane fade in active  " id="pills-login">
                 <signIn v-if="signIn" />
               </div>
   
@@ -57,13 +58,15 @@
                 <a href="https://www.facebook.com" style="text-decoration: none;"><b>Facebook</b></a>
               </div>
               <div class="border border-2 p-2 w-50 text-center my-4 fs-2 preferred-color">
-                <img src="../../assets/google-icon.png" width="30rem" class="me-2" />
+                <img src="@/assets/google-icon.png" width="30rem" class="me-2" />
                 <a href="https://myaccount.google.com/" style="text-decoration: none;"><b>Google</b></a>
               </div>
               <p class="ms-3 fs-4">
                 by clicking submit you agree to
                 <br />&nbsp;&nbsp;&nbsp; the <a href="#">Terms and Conditions</a>
               </p>
+                          <img src="@/assets/illustration.svg" id="illustration" />
+
             </div>
           </div>
           <!-- Second column -->
@@ -96,7 +99,22 @@
   .selected > span {
     color: #b02b26;
   }
-  
+  #illustration {
+  position: relative;
+  left: 13%;
+  width: 170px;
+}
+.password-container {
+  position: relative;
+}
+
+.fa-eye {
+  position: absolute;
+  top: 55%;
+  right: 1%;
+  cursor: pointer;
+  color: lightgray;
+}
   .sign {
     font-size: xx-large;
     color: black;
